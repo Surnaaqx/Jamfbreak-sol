@@ -1,0 +1,31 @@
+THIRD-PARTY AND DONOR-ASSET PROVENANCE
+======================================
+
+The native helper executables/DLLs under bin/ and the legacy donor backup
+were verified byte-for-byte against files already published in:
+
+https://github.com/FireMonster445/VitreosExploit
+
+Verification date: 2026-08-29
+
+The modern iPad donor under backups/ios26-ipad/ came from the reviewed
+LetsKickMDMiPad folder in the user-supplied RodbautisTv MDM UNTETHERED BYPASS
+2026 package. The renamed deviceinfo.dll, sys.temp.dll, and finish.dll tools
+in that package were verified byte-for-byte as the same ideviceinfo,
+idevicebackup2, and idevicerestart helpers already distributed here. The
+original batch wrapper is not included or executed.
+
+Modern donor inspection date: 2026-09-21
+
+The native helpers are based on the libimobiledevice ecosystem. Their
+components remain governed by their respective upstream licenses:
+
+https://github.com/libimobiledevice/libimobiledevice
+https://github.com/libimobiledevice/libplist
+https://github.com/libimobiledevice/libusbmuxd
+https://github.com/libimobiledevice/libideviceactivation
+
+Jamfbreak source revision used for this bundle:
+v1.0.5 (packaged from the working tree; base revision 5e48924e1c603ab5c13082eb8063fd9cde0a6e32)
+
+SHA256SUMS.txt records the SHA-256 digest of every bundled file.
