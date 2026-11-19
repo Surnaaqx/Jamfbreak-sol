@@ -1,0 +1,65 @@
+Jamfbreak-v1.0.8 (2026-10-30)
+=============================
+
+- Changed: every card border in the app is removed — the console, device
+  info tiles, status pill and settings dialog now rely on layered panel
+  tones only, no outlines anywhere.
+- Changed: the console now matches the redesign mockup exactly — the
+  Console title and copy/refresh buttons wrap around a darker, inset,
+  borderless scrollable output area.
+- Changed: the device info grid now sits inside a soft grey rounded
+  container that wraps the two-column tiles, like the mockup.
+- Core bypass pipeline, donor routing and safety controls are unchanged
+  from v1.0.7.
+
+Jamfbreak-v1.0.7 (2026-10-29)
+=============================
+
+- New: the real Jamfbreak logo artwork now sits next to the app title,
+  rendered cleanly at window scale with no outline plate.
+- New: the entire UI now uses the Outfit typeface (bundled, fully
+  offline); the console keeps its monospaced rendering.
+- Changed: the Hacker theme is now a single command-line interface —
+  the whole window reads like one terminal session with prompt-prefixed
+  output, typed headers, inline [ settings ]/[ github ]/[ run bypass ]
+  commands and a blinking cursor. Light/Dark themes are unchanged.
+- Core bypass pipeline, donor routing and safety controls are unchanged
+  from v1.0.6.
+
+Jamfbreak-v1.0.6 (2026-10-29)
+=============================
+
+- Fixed: the redesigned GUI showed only a black window in the packaged exe.
+  Root cause: pywebview loaded the bundle through NavigateToString (an
+  opaque about:blank origin) where this Vite module bundle refuses to
+  execute. The GUI now decodes the same compiled frontend to a temp HTML
+  file and loads it as a file:// URL; the app, bridge and settings all
+  mount and respond exactly as in the browser preview.
+- App version stamp bumped to 1.0.6; bypass pipeline, donor routing and
+  all safety controls are unchanged.
+
+Jamfbreak-v1.0.5 (2026-10-28)
+=============================
+
+- New: redesigned GUI matching the updated design — device info grid,
+  console with blur-reveal text animation, hover animation on every icon,
+  background darkening on hover and a press animation on every button.
+- New: Settings dialog (gear icon) with a smooth blurred-backdrop pop-up:
+  Light, Dark and a command-line style "Hacker" theme with terminal
+  animations; version, build and environment details; donor inventory.
+- New: book icon opens the public GitHub repository.
+- Core bypass pipeline, donor routing and safety controls are unchanged
+  from v1.0.4: iOS 26.6.2-27.0.1 modern donor path, 27.0.1 refusal above
+  the window, settings-only restore, exit-0-only reboot.
+
+Jamfbreak-v1.0.4 (2026-10-27)
+==============================
+
+- New: iOS 26.6.2 - 27.0.1 (iPhone and iPad) bypass support via the modern donor path.
+  - iPhones use backups/ios26-iphone/, iPads use backups/ios26-ipad/.
+  - Devices above iOS 27.0.1 are refused before any device modification.
+- The third-party batch wrapper is never executed; the flow is implemented natively
+  with idevicebackup2 restore --system --settings --skip-apps --no-reboot.
+- Reboot only happens after a successful (exit 0) restore, as before.
+- UI is unchanged from v1.0.3.
+
